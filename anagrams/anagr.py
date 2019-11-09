@@ -13,15 +13,18 @@ def is_anagram(a, b):
     False
     >>> is_anagram('kill','lkill')
     False
+    >>> is_anagram('pot', 'top')
+    True
     '''
 
-    for letter in a:
-        if letter not in b:
-            return False
-    for letter in b:
-        if letter not in a:
-            return False
-    return True
+
+    sorted_a = sorted(a)
+    sorted_b = sorted(b)
+
+    if sorted_a == sorted_b:
+        return True
+    else:
+        return False    
 
 
 
