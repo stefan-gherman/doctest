@@ -19,9 +19,8 @@ def hand(lst):
     'nothing'
     '''
 
-
     out = ""
-    sorted_hand = sorted(lst,reverse = True)
+    sorted_hand = sorted(lst, reverse=True)
 
     freq_dict = {}
 
@@ -31,17 +30,14 @@ def hand(lst):
         else:
             freq_dict[elem] = 1
 
-
     maxi = 0
     more_pairs = 1
     for key in freq_dict.keys():
         if freq_dict[key] > maxi:
             maxi = freq_dict[key]
-            #position = key 
+            #position = key
         elif freq_dict[key] == maxi and maxi == 2:
-            more_pairs += 1    
-
-    
+            more_pairs += 1
 
     if maxi == 5:
         out = "five"
@@ -49,13 +45,12 @@ def hand(lst):
         out = "three"
     elif maxi == 2:
         if more_pairs > 1:
-            out = "twopairs"    
+            out = "twopairs"
         else:
-            out ='onepair'
+            out = 'onepair'
     elif maxi == 4:
         out = "four"
     elif maxi == 1:
-        out = "nothing"    
-
+        out = "nothing"
 
     return out
